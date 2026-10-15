@@ -2,3 +2,6 @@
 
 #alias s_dazuo {#read dazuo.tin}
 #alias e_dazuo {#class {dazuo} {kill}}
+
+#alias s_tuna {#read tuna.tin}
+#alias e_tuna {#class {tuna} {kill}}
