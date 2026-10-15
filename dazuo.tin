@@ -4,6 +4,4 @@
 #ACTION {^你一觉醒来，精神抖擞地活动了几下手脚。$} {dazuo 10}
 #CLASS {dazuo} {close}
 
-#alias finish {#class {dazuo} {kill}}
-
 dazuo 10
