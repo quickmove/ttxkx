@@ -1,0 +1,4 @@
+#session xkx mud.pkuxkx.net 8081
+
+#alias s_dazuo {#read dazuo.tin}
+#alias e_dazuo {#class {dazuo} {kill}}
