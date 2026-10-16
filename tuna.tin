@@ -2,6 +2,7 @@
 #ACTION {^你现在精不足，无法修行精力！$} {sleep}
 #ACTION {^你吐纳完毕，睁开双眼，站了起来。$} {tuna 10}
 #ACTION {^你一觉醒来，精神抖擞地活动了几下手脚。$} {tuna 10}
+#ACTION {^你的精力修为已经达到了瓶颈。$} {e_tuna}
 #CLASS {tuna} {close}
 
 tuna 10

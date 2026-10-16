@@ -1,0 +1,37 @@
+#class {hpbrief_status} {open}
+
+#split 5 0
+
+#ticker {hp_refresh} {#var hpb_line 0; hpbrief} {5}
+
+#var hpb_line 0
+
+#action {^#%d,%d,%d,%d,%d,%d$} {
+    #math {hpb_line} {$hpb_line + 1};
+
+    #if {$hpb_line == 1} {
+        #var exp %1;
+        #var pot %2;
+        #var maxneili %3;
+        #var neili %4;
+        #var maxjingli %5;
+        #var jingli %6;
+    };
+
+    #if {$hpb_line == 2} {
+        #var maxqi %1;
+        #var qi %2;
+        #var maxjing %4;
+        #var jing %5;
+
+        #show {精神: $jing/$maxjing  精力: $jingli/$maxjingli} {4} {2};
+        #show {气血: $qi/$maxqi  内力: $neili/$maxneili} {3} {2};
+        #show {潜能: $pot  经验: $exp} {2} {2};
+
+        #var hpb_line 0;
+    };
+
+    #line gag;
+}
+
+#class {hpbrief_status} {close}

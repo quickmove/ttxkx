@@ -5,3 +5,8 @@
 
 #alias s_tuna {#read tuna.tin}
 #alias e_tuna {#class {tuna} {kill}}
+
+#alias yz_hq {enter shudong;say 天堂有路你不走;d;2;ne;ne;u;enter;e}
+#alias hq_yz {w;out;enter dong;sw;sw;sw;u;out}
+#alias s_xue {#var sk_name %1;#read xue.tin}
+#alias e_xue {#class {xue_$sk_name} {kill};#unvar sk_name}

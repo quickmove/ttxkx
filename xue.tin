@@ -1,0 +1,9 @@
+#CLASS {xue_$sk_name} {open}
+#ACTION {^其中一次对答你颇有所感，你听了裘万家的指导，似乎有些心得。$} {#delay 1 {xue qiu for $sk_name 1}}
+#ACTION {^你今天太累了，结果什么也没有学到。$} {#delay 1 {sleep}}
+#ACTION {^你一觉醒来，精神抖擞地活动了几下手脚。$} {xue qiu for $sk_name 1}
+#ACTION {^你刚刚睡过一觉, 多睡对身体有害无益} {#delay 5 {sleep}}
+#ACTION {^也许是缺乏实战经验，你对裘万家的回答总是无法领会。$} {s_xue $sk_name}
+#CLASS {xue_$sk_name} {close}
+
+xue qiu for $sk_name 1
