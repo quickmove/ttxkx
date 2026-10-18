@@ -1,0 +1,12 @@
+#class {lian_$sk_name} {open}
+#action {^你试着练习%*，获得了少许进步！$} {#delay 1 {lian $sk_name 1}}
+#action {^你的精血不足，无法练习「%*」。$} {sleep}
+#action {^你的气血不足，无法练习「%*」。$} {sleep}
+#action {^你现在气血虚浮，练习不了『%*』。$} {sleep}
+#action {^你一觉醒来，精神抖擞地活动了几下手脚。$} {lian $sk_name 1}
+#action {^你刚刚睡过一觉, 多睡对身体有害无益} {#delay 5 {sleep}}
+#action {^你需要提高基本功，不然练得再多也没有用。$} {e_lian $sk_name}
+#action {^你太累了，没有办法练习%*。$} {#delay 5 {sleep}}
+#class {lian_$sk_name} {close}
+
+lian $sk_name 1

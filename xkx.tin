@@ -10,3 +10,5 @@
 #alias hq_yz {w;out;enter dong;sw;sw;sw;u;out}
 #alias s_xue {#var sk_name %1;#read xue.tin}
 #alias e_xue {#class {xue_$sk_name} {kill};#unvar sk_name}
+#alias s_lian {#var sk_name %1;#read lian.tin}
+#alias e_lian {#class {lian_$sk_name} {kill};#unvar sk_name}

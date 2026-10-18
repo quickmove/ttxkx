@@ -2,6 +2,8 @@
 #ACTION {^你现在的气太少了，无法产生内息运行全身经脉。$} {sleep}
 #ACTION {^你运功完毕，深深吸了口气，站了起来。$} {dazuo 10}
 #ACTION {^你一觉醒来，精神抖擞地活动了几下手脚。$} {dazuo 10}
+#ACTION {^你刚刚睡过一觉, 多睡对身体有害无益} {#delay 5 {#4 drink;get gou rou;#4 eat gou rou;sleep}}
+#ACTION {^你的内力修为似乎已经达到了瓶颈。$} {e_dazuo}
 #CLASS {dazuo} {close}
 
 dazuo 10
