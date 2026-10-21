@@ -1,8 +1,8 @@
 #class {du} {open}
-#action {^你研读了一次有关%*的技巧，似乎有点心得。$} {#delay 1 {du book for 1}}
+#action {^你研读了一次有关%*的技巧，似乎有点心得。$} {#delay 1 {du $book_name for 1}}
 #action {^你现在过于疲倦，无法专心下来研读新知。$} {sleep}
-#action {^你一觉醒来，精神抖擞地活动了几下手脚。$} {du book for 1}
+#action {^你一觉醒来，精神抖擞地活动了几下手脚。$} {du $book_name for 1}
 #action {^你刚刚睡过一觉, 多睡对身体有害无益} {#delay 5 sleep}
 #class {du} {close}
 
-du book for 1
+du $book_name for 1
