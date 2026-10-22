@@ -1,18 +1,3 @@
-#var lib_ui_beautify[META] {
-    {NAME}      {美化插件}
-    {DESC}      {美化你的 TinTin++，对齐你的表格。}
-    {AUTHOR}    {担子炮}
-};
-
-#func {lib_ui_beautify.Init} {
-    #class data/lib/ui/beautify open;
-    #var beautify-switch {OFF};
-    #var beautify-eol-mark {<299><g03>.};
-    #class data/lib/ui/beautify close;
-    beautify.On;
-    #return true;
-};
-
 #var beautify-table {
     {┌|┎|╭|╓|└|┖|╰|╙}                                   {─}
     {─|┬|┭|┰|┱|╥}                                         {─}
@@ -65,7 +50,7 @@
 
     #nop 行尾空格因为肉眼不可见因此常常导致无法匹配触发。这里把它可视化一下。;
     #action {~^%*%+1S%+1..s%c{|ID=beautify}$} {
-        #line ignore #showme {@Beautify{{%%1%%2%%3}}$beautify-eol-mark};
+        #line ignore #showme {@Beautify{{%%1%%2%%3}}<299><g03>.};
         #line gag;
     } {9.999};
 
@@ -102,16 +87,6 @@
     #return {$text};
 };
 
-#alias {beautify.SetEolMark} {
-    #local mark {%1};
-
-    #if { "$mark" == "" } {
-        #local mark {<g03>.};
-    };
-
-    #var beautify-eol-mark {$mark};
-};
-
 #alias {beautify.ToggleSwitch} {
     #if { "${beautify-switch}" == "ON" } {
         beautify.Off;
@@ -120,3 +95,5 @@
         beautify.On;
     };
 };
+
+lib_ui_beautify.Init;

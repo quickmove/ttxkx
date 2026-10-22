@@ -1,4 +1,5 @@
-#session xkx mud.pkuxkx.net 8081
+#read beautify.tin
+beautify.On
 
 #alias s_dazuo {#read dazuo.tin}
 #alias e_dazuo {#class {dazuo} {kill}}
@@ -12,3 +13,7 @@
 #alias e_xue {#class {xue_$sk_name} {kill};#unvar sk_name}
 #alias s_lian {#var sk_name %1;#read lian.tin}
 #alias e_lian {#class {lian_$sk_name} {kill};#unvar sk_name}
+#alias s_du {#var book_name %0;#read du.tin}
+#alias e_du {#class {du} {kill};#unvar book_name}
+
+#session xkx mud.pkuxkx.net 8081
