@@ -1,0 +1,8 @@
+#class {diao} {open}
+#action {^你一提杆，钓到了} {gua yuer;diao yu}
+#action {^你鱼漂晃动，你心里一急，猛的一提杆} {gua yuer;diao yu}
+#action {^你猛的一提杆} {gua yuer;diao yu}
+#action {^你猛一提杆，} {gua yuer;diao yu}
+#class {diao} {close}
+
+gua yuer;diao yu
