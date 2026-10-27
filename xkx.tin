@@ -16,4 +16,10 @@ beautify.On
 #alias s_du {#var book_name %0;#read du.tin}
 #alias e_du {#class {du} {kill};#unvar book_name}
 
+#alias sjy node walk sms_sjy
+#alias sms node walk sjy_sms
+#alias sjob ask sengren about job
+#alias sdone ask sengren about done
+#alias wjing write jing
+
 #session xkx mud.pkuxkx.net 8081
