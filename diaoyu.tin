@@ -3,6 +3,7 @@
 #action {^你鱼漂晃动，你心里一急，猛的一提杆} {gua yuer;diao yu}
 #action {^你猛的一提杆} {gua yuer;diao yu}
 #action {^你猛一提杆，} {gua yuer;diao yu}
+#tick {dfish} {#6 drop fish} 60
 #class {diao} {close}
 
 gua yuer;diao yu
