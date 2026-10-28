@@ -22,5 +22,6 @@ beautify.On
 
 #alias hhjd {say 红花老祖本姓朱，为救苍生下凡来}
 #alias wk walk
+#alias pa_yinggu {s; e; n; w; s; s; w}
 
 #session xkx mud.pkuxkx.net 8081
