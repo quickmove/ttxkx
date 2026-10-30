@@ -1,9 +1,11 @@
 #CLASS {xue} {open}
-#ACTION {^其中一次对答你颇有所感，你听了%*的指导，似乎有些心得。$} {#delay 0.4 {xue $teacher for $sk_name 1}}
+#if {$delay_duration && $delay_duration != ""} {#show 保持 delay_duration = $delay_duration } {#var delay_duration 0.6;#show 设置 delay_duration=0.6}
+#ACTION {^其中一次对答你颇有所感，你听了%*的指导，似乎有些心得。$} {#delay $delay_duration {xue $teacher for $sk_name 1}}
 #ACTION {^你今天太累了，结果什么也没有学到。$} {#delay 1 {sleep}}
 #ACTION {^你一觉醒来，精神抖擞地活动了几下手脚。$} {xue $teacher for $sk_name 1}
 #ACTION {^你刚刚睡过一觉, 多睡对身体有害无益} {#delay 5 {sleep}}
 #ACTION {^也许是缺乏实战经验，你对%*的回答总是无法领会。$} {e_xue $sk_name}
+#ACTION {我在你这里时间已经不短了，其他徒弟们还等着我，我先去了。} {clap 3;#delay 1 {teacher};#delay 50 {xue $teacher for $sk_name 1}}
 #CLASS {xue} {close}
 
 xue $teacher for $sk_name 1

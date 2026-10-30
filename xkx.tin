@@ -24,4 +24,6 @@ beautify.On
 #alias wk walk
 #alias pa_yinggu {s; e; n; w; s; s; w}
 
+#alias ddr {#var delay_duration %0;#show 设置delay_duration=$delay_duration}
+
 #session xkx mud.pkuxkx.net 8081
