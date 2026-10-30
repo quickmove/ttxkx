@@ -1,5 +1,6 @@
 #class {lian_$sk_name} {open}
-#action {^你试着练习%*，获得了少许进步！$} {#delay 1 {lian $sk_name 1}}
+#if {$delay_duration && $delay_duration != ""} {#show 保持 delay_duration = $delay_duration } {#var delay_duration 0.6;#show 设置 delay_duration=0.6}
+#action {^你试着练习%*，获得了少许进步！$} {#delay $delay_duration {lian $sk_name 1}}
 #action {^你的精血不足，无法练习「%*」。$} {sleep}
 #action {^你的气血不足，无法练习「%*」。$} {sleep}
 #action {^你现在气血虚浮，练习不了『%*』。$} {sleep}
