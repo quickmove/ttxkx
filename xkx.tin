@@ -1,6 +1,8 @@
 #read beautify.tin
 beautify.On
 
+#read hpbrief.tin
+
 #alias s_dazuo {#read dazuo.tin}
 #alias e_dazuo {#class {dazuo} {kill}}
 

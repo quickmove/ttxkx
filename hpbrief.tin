@@ -1,17 +1,60 @@
+#VAR {telnet[iac]}  {\xFF}
+#VAR {telnet[do]}   {\xFD}
+#VAR {telnet[sb]}   {\xFA}
+#VAR {telnet[se]}   {\xF0}
+#VAR {telnet[gmcp]} {\xC9}
+
+#EVENT {IAC WILL GMCP} {
+    #SEND {$telnet[iac]$telnet[do]$telnet[gmcp]}
+}
+
+#VAR {my[qi]} {0}
+#VAR {my[max_qi]} {0}
+#VAR {my[jing]} {0}
+#VAR {my[max_jing]} {0}
+#VAR {my[neili]} {0}
+#VAR {my[max_neili]} {0}
+#VAR {my[jingli]} {0}
+#VAR {my[max_jingli]} {0}
+#VAR {my[food]} {0}
+#VAR {my[water]} {0}
+#VAR {my[combat_exp]} {0}
+#VAR {my[is_busy]} {0}
+#VAR {my[is_fighting]} {0}
+
 #EVENT {IAC SB GMCP GMCP.Status IAC SE} {
     #VAR {my[status_raw]} {%0};
-    #IF {"$my[status_raw][qi]" != ""}           {#VAR {my[qi]}           {$my[status_raw][qi]}};
-    #IF {"$my[status_raw][max_qi]" != ""}       {#VAR {my[max_qi]}       {$my[status_raw][max_qi]}};
-    #IF {"$my[status_raw][jing]" != ""}         {#VAR {my[jing]}         {$my[status_raw][jing]}};
-    #IF {"$my[status_raw][max_jing]" != ""}     {#VAR {my[max_jing]}     {$my[status_raw][max_jing]}};
-    #IF {"$my[status_raw][neili]" != ""}        {#VAR {my[neili]}        {$my[status_raw][neili]}};
-    #IF {"$my[status_raw][max_neili]" != ""}    {#VAR {my[max_neili]}    {$my[status_raw][max_neili]}};
-    #IF {"$my[status_raw][jingli]" != ""}       {#VAR {my[jingli]}       {$my[status_raw][jingli]}};
-    #IF {"$my[status_raw][max_jingli]" != ""}   {#VAR {my[max_jingli]}   {$my[status_raw][max_jingli]}};
-    #IF {"$my[status_raw][food]" != ""}         {#VAR {my[food]}         {$my[status_raw][food]}};
-    #IF {"$my[status_raw][water]" != ""}        {#VAR {my[water]}        {$my[status_raw][water]}};
-    #IF {"$my[status_raw][potential]" != ""}    {#VAR {my[potential]}    {$my[status_raw][potential]}};
-    #IF {"$my[status_raw][combat_exp]" != ""}   {#VAR {my[combat_exp]}   {$my[status_raw][combat_exp]}};
-    #IF {"$my[status_raw][is_busy]" != ""}      {#VAR {my[is_busy]}      {$my[status_raw][is_busy]}};
-    #IF {"$my[status_raw][is_fighting]" != ""}  {#VAR {my[is_fighting]}  {$my[status_raw][is_fighting]}}
+    #IF {"$my[status_raw][qi]" != ""}          {#VAR {my[qi]}          {$my[status_raw][qi]}};
+    #IF {"$my[status_raw][max_qi]" != ""}      {#VAR {my[max_qi]}      {$my[status_raw][max_qi]}};
+    #IF {"$my[status_raw][jing]" != ""}        {#VAR {my[jing]}        {$my[status_raw][jing]}};
+    #IF {"$my[status_raw][max_jing]" != ""}    {#VAR {my[max_jing]}    {$my[status_raw][max_jing]}};
+    #IF {"$my[status_raw][neili]" != ""}       {#VAR {my[neili]}       {$my[status_raw][neili]}};
+    #IF {"$my[status_raw][max_neili]" != ""}   {#VAR {my[max_neili]}   {$my[status_raw][max_neili]}};
+    #IF {"$my[status_raw][jingli]" != ""}      {#VAR {my[jingli]}      {$my[status_raw][jingli]}};
+    #IF {"$my[status_raw][max_jingli]" != ""}  {#VAR {my[max_jingli]}  {$my[status_raw][max_jingli]}};
+    #IF {"$my[status_raw][food]" != ""}        {#VAR {my[food]}        {$my[status_raw][food]}};
+    #IF {"$my[status_raw][water]" != ""}       {#VAR {my[water]}       {$my[status_raw][water]}};
+    #IF {"$my[status_raw][combat_exp]" != ""}  {#VAR {my[combat_exp]}  {$my[status_raw][combat_exp]}};
+    #IF {"$my[status_raw][is_busy]" != ""}     {#VAR {my[is_busy]}     {$my[status_raw][is_busy]}};
+    #IF {"$my[status_raw][is_fighting]" != ""} {#VAR {my[is_fighting]} {$my[status_raw][is_fighting]}}
+    Status_Draw
 }
+
+#ALIAS {Status_Draw} {
+    #MATH {pct_qi}    {$my[qi]    * 100 / $my[max_qi]};
+    #MATH {pct_jing}  {$my[jing]  * 100 / $my[max_jing]};
+    #MATH {pct_neili} {$my[neili] * 100 / $my[max_neili]};
+    #MATH {pct_jingli}{$my[jingli]* 100 / $my[max_jingli]};
+
+    #format {status_line} {
+气血:%d/%d[%d%%] 精神:%d/%d[%d%%] 内力:%d/%d[%d%%] 精力:%d/%d[%d%%] 食:%d 水:%d 经验:%d}
+        {$my[qi]} {$my[max_qi]} {$pct_qi}
+        {$my[jing]} {$my[max_jing]} {$pct_jing}
+        {$my[neili]} {$my[max_neili]} {$pct_neili}
+        {$my[jingli]} {$my[max_jingli]} {$pct_jingli}
+        {$my[food]} {$my[water]} {$my[combat_exp]};
+
+    #showme {$status_line} 0 1
+}
+
+#split 0 1
