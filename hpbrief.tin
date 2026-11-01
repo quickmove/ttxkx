@@ -1,37 +1,17 @@
-#class {hpbrief_status} {open}
-
-#split 5 0
-
-#ticker {hp_refresh} {#var hpb_line 0; hpbrief} {5}
-
-#var hpb_line 0
-
-#action {^#%d,%d,%d,%d,%d,%d$} {
-    #math {hpb_line} {$hpb_line + 1};
-
-    #if {$hpb_line == 1} {
-        #var exp %1;
-        #var pot %2;
-        #var maxneili %3;
-        #var neili %4;
-        #var maxjingli %5;
-        #var jingli %6;
-    };
-
-    #if {$hpb_line == 2} {
-        #var maxqi %1;
-        #var qi %2;
-        #var maxjing %4;
-        #var jing %5;
-
-        #show {精神: $jing/$maxjing  精力: $jingli/$maxjingli} {4} {2};
-        #show {气血: $qi/$maxqi  内力: $neili/$maxneili} {3} {2};
-        #show {潜能: $pot  经验: $exp} {2} {2};
-
-        #var hpb_line 0;
-    };
-
-    #line gag;
+#EVENT {IAC SB GMCP GMCP.Status IAC SE} {
+    #VAR {my[status_raw]} {%0};
+    #IF {"$my[status_raw][qi]" != ""}           {#VAR {my[qi]}           {$my[status_raw][qi]}};
+    #IF {"$my[status_raw][max_qi]" != ""}       {#VAR {my[max_qi]}       {$my[status_raw][max_qi]}};
+    #IF {"$my[status_raw][jing]" != ""}         {#VAR {my[jing]}         {$my[status_raw][jing]}};
+    #IF {"$my[status_raw][max_jing]" != ""}     {#VAR {my[max_jing]}     {$my[status_raw][max_jing]}};
+    #IF {"$my[status_raw][neili]" != ""}        {#VAR {my[neili]}        {$my[status_raw][neili]}};
+    #IF {"$my[status_raw][max_neili]" != ""}    {#VAR {my[max_neili]}    {$my[status_raw][max_neili]}};
+    #IF {"$my[status_raw][jingli]" != ""}       {#VAR {my[jingli]}       {$my[status_raw][jingli]}};
+    #IF {"$my[status_raw][max_jingli]" != ""}   {#VAR {my[max_jingli]}   {$my[status_raw][max_jingli]}};
+    #IF {"$my[status_raw][food]" != ""}         {#VAR {my[food]}         {$my[status_raw][food]}};
+    #IF {"$my[status_raw][water]" != ""}        {#VAR {my[water]}        {$my[status_raw][water]}};
+    #IF {"$my[status_raw][potential]" != ""}    {#VAR {my[potential]}    {$my[status_raw][potential]}};
+    #IF {"$my[status_raw][combat_exp]" != ""}   {#VAR {my[combat_exp]}   {$my[status_raw][combat_exp]}};
+    #IF {"$my[status_raw][is_busy]" != ""}      {#VAR {my[is_busy]}      {$my[status_raw][is_busy]}};
+    #IF {"$my[status_raw][is_fighting]" != ""}  {#VAR {my[is_fighting]}  {$my[status_raw][is_fighting]}}
 }
-
-#class {hpbrief_status} {close}
