@@ -54,7 +54,7 @@
         {$my[jingli]} {$my[max_jingli]} {$pct_jingli}
         {$my[food]} {$my[water]} {$my[combat_exp]};
 
-    #showme {$status_line} 0 1
+    #showme {\e[100m $status_line \e[0m} 0 1
 }
 
 #split 0 1

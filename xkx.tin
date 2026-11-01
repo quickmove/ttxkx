@@ -28,5 +28,7 @@ beautify.On
 
 #alias ddr {#var delay_duration %0;#show 设置delay_duration=$delay_duration}
 #alias rr {yun recover}
+#alias gc {get silver from corpse;get gold from corpse;get xin from corpse}
+#alias gx {give xin to pu}
 
 #session xkx mud.pkuxkx.net 8081
