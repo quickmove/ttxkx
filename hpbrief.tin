@@ -46,15 +46,12 @@
     #MATH {pct_neili} {$my[neili] * 100 / $my[max_neili]};
     #MATH {pct_jingli}{$my[jingli]* 100 / $my[max_jingli]};
 
-    #format {status_line} {
-气血:%d/%d[%d%%] 精神:%d/%d[%d%%] 内力:%d/%d[%d%%] 精力:%d/%d[%d%%] 食:%d 水:%d 经验:%d}
+    #format {status_line} {气血:%d/%d[%d%%] 精神:%d/%d[%d%%] 内力:%d/%d[%d%%] 精力:%d/%d[%d%%] 食:%d 水:%d 经验:%d}
         {$my[qi]} {$my[max_qi]} {$pct_qi}
         {$my[jing]} {$my[max_jing]} {$pct_jing}
         {$my[neili]} {$my[max_neili]} {$pct_neili}
         {$my[jingli]} {$my[max_jingli]} {$pct_jingli}
         {$my[food]} {$my[water]} {$my[combat_exp]};
-
-    #showme {\e[100m $status_line \e[0m} 0 1
+    #showme {$status_line} {-2} {0};
 }
 
-#split 0 1
