@@ -41,16 +41,12 @@
 }
 
 #ALIAS {Status_Draw} {
-    #MATH {pct_qi}    {$my[qi]    * 100 / $my[max_qi]};
-    #MATH {pct_jing}  {$my[jing]  * 100 / $my[max_jing]};
-    #MATH {pct_neili} {$my[neili] * 100 / $my[max_neili]};
-    #MATH {pct_jingli}{$my[jingli]* 100 / $my[max_jingli]};
 
-    #format {status_line} {气血:%d/%d[%d%%] 精神:%d/%d[%d%%] 内力:%d/%d[%d%%] 精力:%d/%d[%d%%] 食:%d 水:%d 经验:%d}
-        {$my[qi]} {$my[max_qi]} {$pct_qi}
-        {$my[jing]} {$my[max_jing]} {$pct_jing}
-        {$my[neili]} {$my[max_neili]} {$pct_neili}
-        {$my[jingli]} {$my[max_jingli]} {$pct_jingli}
+    #format {status_line} {气血:%+5s/%+5s 精神:%+5s/%+5s 内力:%+7s/%+6s 精力:%+7s/%+6s 食:%+3s 水:%+3s 经验:%+10s}
+        {$my[qi]} {$my[max_qi]}
+        {$my[jing]} {$my[max_jing]}
+        {$my[neili]} {$my[max_neili]}
+        {$my[jingli]} {$my[max_jingli]}
         {$my[food]} {$my[water]} {$my[combat_exp]};
     #showme {$status_line} {-2} {0};
 }

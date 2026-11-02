@@ -26,6 +26,8 @@ beautify.On
 #alias hhjd {say 红花老祖本姓朱，为救苍生下凡来}
 #alias wk walk
 #alias pa_yinggu {s; e; n; w; s; s; w}
+#alias {pa_mrch} {w;n;w;s;s;e;e;w;w}
+#alias {pa_mrch_out} {e;s;n;w;n;n;e;s;e}
 
 #alias ddr {#var delay_duration %0;#show 设置delay_duration=$delay_duration}
 #alias rr {yun recover}
