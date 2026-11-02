@@ -2,11 +2,13 @@
 #action {^你领悟出一些基本轻功方面的窍门。$} {
     #delay 1.8 {
         #math {qi_val} {$my[qi]};
-        #if {$qi_val>300} {climb tree} {yun qi;climb tree}
+        #if {$qi_val>300} {climb tree} {yun qi;#delay 1.5 {climb tree}}
     }
 }
 #action {^你身子发虚，一头栽了下来，哎呀！$} {#delay 1.8 {s;s;s;w;enter jianxinju;#delay 5 {sleep}}}
 #action {^你一觉醒来，精神抖擞地活动了几下手脚。$} {leave sld;#delay 5 {e;n;n;n;yun qi;climb tree}}
+#action {^你现在正忙着呢。} {#delay 3 {climb tree}}
+#action {^你刚刚睡过一觉, 多睡对身体有害无益} {#delay 5 {sleep}}
 
 #class {climbtree} {close}
 
