@@ -42,7 +42,7 @@
 
 #ALIAS {Status_Draw} {
 
-    #format {status_line} {气血:%+5s/%+5s 精神:%+5s/%+5s 内力:%+7s/%+6s 精力:%+7s/%+6s 食:%+3s 水:%+3s 经验:%+10s}
+    #format {status_line} {\e[7m气血:%+5s/%+5s  精神:%+5s/%+5s  |  内力:%+7s/%+6s  精力:%+7s/%+6s  |  食:%+3s 水:%+3s  |  经验:%+10s\e[0m}
         {$my[qi]} {$my[max_qi]}
         {$my[jing]} {$my[max_jing]}
         {$my[neili]} {$my[max_neili]}
