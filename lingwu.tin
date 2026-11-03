@@ -1,0 +1,9 @@
+#class {lingwu} {open}
+#if {$delay_duration && $delay_duration != ""} {#show 保持 delay_duration = $delay_duration } {#var delay_duration 0.6;#show 设置 delay_duration=0.6}
+#action {^你领悟了一次%*。} {#delay $delay_duration {lingwu $sk_name 1}}
+#action {^你现在过于疲倦,无法静下心来领悟功夫！$} {yun regenerate}
+#action {^你略一凝神，精神看起来好多了。$} {lingwu $sk_name 1}
+#action {你的内力已经枯竭，不能施用内功。} {dazuo 300}
+#class {lingwu} {close}
+
+lingwu $sk_name 1

@@ -1,4 +1,4 @@
-#class {lian_$sk_name} {open}
+#class {lian} {open}
 #if {$delay_duration && $delay_duration != ""} {#show 保持 delay_duration = $delay_duration } {#var delay_duration 0.6;#show 设置 delay_duration=0.6}
 #action {^你试着练习%*，获得了少许进步！$} {#delay $delay_duration {lian $sk_name 1}}
 #action {^你的精血不足，无法练习「%*」。$} {sleep}
@@ -9,6 +9,6 @@
 #action {^你需要提高基本功，不然练得再多也没有用。$} {e_lian $sk_name}
 #action {^你太累了，没有办法练习%*。$} {#delay 5 {sleep}}
 #action {^你减缓真气运行，让气血运行恢复正常。$} {yun qi}
-#class {lian_$sk_name} {close}
+#class {lian} {close}
 
 lian $sk_name 1
