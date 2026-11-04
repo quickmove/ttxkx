@@ -1,0 +1,2 @@
+#alias {hua} {perform huagu-mianzhang.hua %0}
+#alias {qr} {perform flatter.qiurao %0}

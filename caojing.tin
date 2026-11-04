@@ -1,0 +1,8 @@
+#class {cj} {open}
+#action {^http://fullme.pkuxkx.net/robot.php?filename=%*} {#system {fullme %0}}
+#action {^你默写良久，终于抄完了，看样子可以回去领工钱了。$} {#delay 2 {#class {cj} {kill};sms}}
+#class {cj} {close}
+
+ask sengren about job;node walk sms_sjy;#delay 3 write jing;#delay 5 write jing
+
+

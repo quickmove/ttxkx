@@ -5,6 +5,8 @@ beautify.On
 
 #read hpbrief.tin
 
+#action {^http://fullme.pkuxkx.net/robot.php?filename=%*} {#system {fullme %0}}
+
 #alias s_dazuo {#read dazuo.tin}
 #alias e_dazuo {#class {dazuo} {kill}}
 
@@ -23,7 +25,7 @@ beautify.On
 #alias e_lw {#class {lingwu} {kill};#unvar sk_name}
 
 #alias sms node walk sjy_sms
-#alias sjob {ask sengren about job;node walk sms_sjy;#delay 3 write jing;#delay 5 write jing}
+#alias sjob {#read caojing.tin}
 #alias rp {ask sengren about done;report %0}
 
 #alias hhjd {say 红花老祖本姓朱，为救苍生下凡来}
