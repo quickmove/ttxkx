@@ -1,0 +1,7 @@
+#class {cx} {open}
+#action {^管事对你说道：你去%*表演一下吧。$} {mrf;#showme {表演地点:%1} {-2} {-20};}
+#alias scx {ask guan about job;}
+#alias ecx {sw;n;n;n;sw;ask guan about 完成}
+#alias mrf {ne;s;s;s;ne}
+#alias by {biaoyan suizhuan}
+#class {cx} {close}
