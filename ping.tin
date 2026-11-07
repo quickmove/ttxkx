@@ -1,4 +1,4 @@
 #class {ping} {open}
-#alias {spjob} {ask ping about 治一人杀一人}
+#alias {spjob} {e;leap;w;ask ping about 治一人杀一人}
 #alias {epjob} {ask ping about 杀一人治一人}
 #class {ping} {close}
