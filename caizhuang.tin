@@ -10,5 +10,4 @@
 #action {^你现在精不够，无法控制内息的流动！$} {sleep}
 #action {^这里不是你能睡的地方！$} {#delay 30 {dazuo 300}}
 #class {caizhuang} {close}
-
 cai zhuang
