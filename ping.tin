@@ -1,4 +1,7 @@
 #class {ping} {open}
 #alias {spjob} {e;leap;w;ask ping about 治一人杀一人}
 #alias {epjob} {ask ping about 杀一人治一人}
+#action {^内圈已破，外侧药徒齐声怪笑，步步紧逼而上！$} {#delay 1 killall}
+#action {^只听一声阴笑，最外围的强敌同时欺身而进！$} {#delay 1 killall}
+#alias {kkk} {killall}
 #class {ping} {close}
