@@ -1,7 +1,8 @@
 #class {caizhuang} {open}
+#if {$delay_duration && $delay_duration != ""} {#show 保持 delay_duration = $delay_duration } {#var delay_duration 1;#show 设置 delay_duration=1}
 #action {^你脚踩八卦方位，走得飞快。$} {
     #math {jing_val} {$my[jing]};
-    #if {$jing_val>100} {#delay 1.5 {cai zhuang}} {#delay 1.5 {sleep}}
+    #if {$jing_val>100} {#delay $delay_duration {cai zhuang}} {#delay 1.5 {sleep}}
 }
 #action {^你一觉醒来，精神抖擞地活动了几下手脚。$} {dazuo 500}
 #action {^你伸脚轻轻试了试木桩，心中有点发慌，忙缩了回来。$} {dazuo 500}

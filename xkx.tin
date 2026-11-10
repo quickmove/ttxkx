@@ -24,6 +24,7 @@ beautify.On
 #alias s_lw {#var sk_name %1;#read lingwu.tin}
 #alias e_lw {#class {lingwu} {kill};#unvar sk_name}
 #alias dtime {#var delay_duration %1}
+#alias dtim {#var delay_duration %1}
 
 #alias sms node walk sjy_sms
 #alias sjob {#read caojing.tin}
