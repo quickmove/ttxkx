@@ -1,2 +1,4 @@
 #alias {hua} {perform huagu-mianzhang.hua %0}
 #alias {qr} {perform flatter.qiurao %0}
+#alias {zs} {zhaoshe}
+#alias {chan} {perform shenlong-bian.chan %0}
