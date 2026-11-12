@@ -36,6 +36,7 @@ beautify.On
 #alias {pa_mrch} {w;n;w;s;s;e;e;w;w}
 #alias {pa_mrch_out} {e;s;n;w;n;n;e;s;e}
 #alias {gt} {node walk %0}
+#alias {yb} {#read dukou.tin;yell boat}
 
 #alias ddr {#var delay_duration %0;#show 设置delay_duration=$delay_duration}
 #alias rr {yun recover}

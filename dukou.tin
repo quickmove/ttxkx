@@ -1,0 +1,6 @@
+#class {dukou} {open}
+#action {^岸边一只渡船上的艄公说道：正等着你呢，上来吧。$} {enter}
+#action {别急嘛，这儿正忙着呐} {#delay 2 {yell boat}}
+#action {^一叶扁舟缓缓地驶了过来，艄公将一块踏脚板搭上堤岸，以便乘客上下。$} {enter}
+#action {随后把一块踏脚板搭上堤岸。$} {out;#class {dukou} kill}
+#class {dukou} {close}
