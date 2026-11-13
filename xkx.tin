@@ -42,5 +42,7 @@ beautify.On
 #alias rr {yun recover}
 #alias gc {get silver from corpse;get gold from corpse;get xin from corpse}
 #alias gx {give xin to pu}
+#alias sjz {ask pu about job}
+#alias hz {hit jiazei}
 
 #session xkx mud.pkuxkx.net 8081
