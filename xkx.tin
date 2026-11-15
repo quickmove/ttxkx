@@ -44,5 +44,6 @@ beautify.On
 #alias gx {give xin to pu}
 #alias sjz {ask pu about job}
 #alias hz {hit jiazei}
+#alias {zs} {zhaoshe}
 
 #session xkx mud.pkuxkx.net 8081
