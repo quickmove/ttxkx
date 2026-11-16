@@ -8,6 +8,8 @@ beautify.On
 #action {^http://fullme.pkuxkx.net/robot.php?filename=%*} {#system {fullme %0}}
 #action {^你因为种种原因停了下来，可以用walk继续进行。$} {#delay 0.5 walk}
 
+#action {^请注意，你的活跃度已经偏低。exp 5M以前，你可以使用fullme每15分钟补满全部状态，double内力。$} {#system {fullme "about:blank"}}
+
 #alias s_dazuo {#read dazuo.tin}
 #alias e_dazuo {#class {dazuo} {kill}}
 
