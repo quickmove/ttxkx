@@ -6,7 +6,7 @@ beautify.On
 #read hpbrief.tin
 
 #action {^http://fullme.pkuxkx.net/robot.php?filename=%*} {#system {fullme %0}}
-#action {^你因为种种原因停了下来，可以用walk继续进行。$} {#delay 0.5 walk}
+#action {^你因为种种原因停了下来，可以用walk继续进行。$} {#delay 1 walk}
 
 #action {^请注意，你的活跃度已经偏低。exp 5M以前，你可以使用fullme每15分钟补满全部状态，double内力。$} {#system {fullme "about:blank"}}
 
@@ -40,7 +40,8 @@ beautify.On
 #alias {pa_mrch_out} {e;s;n;w;n;n;e;s;e}
 #alias {gt} {node walk %0}
 #alias {yb} {#read dukou.tin;yell boat}
-
+#alias {pa_baiji} {do 6 s;se;seu;se;se;su;eu;e;eu;baiji}
+#alias {pa_baiji_out} {wd;w;wd;nd;nw;nw;nwd;nw;do 6 n}
 #alias ddr {#var delay_duration %0;#show 设置delay_duration=$delay_duration}
 #alias rr {yun recover}
 #alias gc {get silver from corpse;get gold from corpse;get xin from corpse}
