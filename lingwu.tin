@@ -7,10 +7,10 @@
 #action {你的内力不够。} {sleep}
 #action {^你现在精不够，无法控制内息的流动！$} {#delay 5 {dazuo 300}}
 #action {^你减缓真气运行，让自身恢复正常。$} {lingwu $sk_name 1}
+#action {^你减缓真气运行，让气血运行恢复正常。$} {lingwu $sk_name 1}
 #action {^你运功完毕，深深吸了口气，站了起来。$} {lingwu $sk_name 1}
-#action {^你一觉醒来，精神抖擞地活动了几下手脚。$} {lingwu $sk_name 1}
+#action {^你一觉醒来，精神抖擞地活动了几下手脚。$} {do 5 eat baozi;drink;lingwu $sk_name 1}
 #action {^你的基本功夫比你的高级功夫还高！$} {#class {lingwu} {kill};s_lian $sk_name}
-#tick {eat_drink} {do 5 eat baozi;drink;} 180
 #class {lingwu} {close}
 
 lingwu $sk_name 1
