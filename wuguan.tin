@@ -1,0 +1,9 @@
+#class {wuguan} {open}
+#action {^其中二次对答你颇有所感，你听了武馆教头的指导，似乎有些心得。$} {#delay 0.4 {xue jiaotou for $sk_name 2}}
+#action {^你今天太累了，结果什么也没有学到。$} {yun regenerate}
+#action {^你略一凝神，精神看起来好多了。$} {xue jiaotou for $sk_name 2}
+#action {你的内力已经枯竭，不能施用内功。} {e;sleep}
+#action {^你的内力不够。$} {e;sleep}
+#action {^你一觉醒来，精神抖擞地活动了几下手脚。$} {dazuo 200}
+#action {^你运功完毕，深深吸了口气，站了起来。$} {w;xue jiaotou for $sk_name 2}
+#class {wuguan} {close}
