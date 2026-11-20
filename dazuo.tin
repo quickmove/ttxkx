@@ -3,6 +3,7 @@
 #ACTION {^你运功完毕，深深吸了口气，站了起来。$} {dazuo 20}
 #ACTION {^你的内力修为似乎已经达到了瓶颈。$} {e_dazuo}
 #action {^你一觉醒来，精神抖擞地活动了几下手脚。$} {drink;do 4 eat baozi;dazuo 20}
+#action {^你刚刚睡过一觉, 多睡对身体有害无益} {#delay 5 {dazuo 10}}
 #CLASS {dazuo} {close}
 
 dazuo 10
