@@ -47,7 +47,7 @@ beautify.On
 #alias gc {get silver from corpse;get gold from corpse;get xin from corpse}
 #alias gx {give xin to pu}
 #alias sjz {ask pu about job}
-#alias hz {hit jiazei}
+#alias hz {hit jiazei;zhaoshe}
 #alias {zs} {zhaoshe}
 #alias {wearall} {wear zhanxue;wear zhanpao;wear zhanyi;wear zhankui;wear zhanjia}
 
