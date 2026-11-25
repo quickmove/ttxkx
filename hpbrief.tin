@@ -21,9 +21,19 @@
 #VAR {my[combat_exp]} {0}
 #VAR {my[is_busy]} {0}
 #VAR {my[is_fighting]} {0}
+#VAR {my[id]} {}
 
 #EVENT {IAC SB GMCP GMCP.Status IAC SE} {
     #VAR {my[status_raw]} {%0};
+
+    #IF {"$my[id]" == "" && "$my[status_raw][id]" != ""} {#VAR {my[id]} {$my[status_raw][id]}};
+    #IF {"$my[id]" != "" && "$my[status_raw][id]" != "" && "$my[status_raw][id]" != "$my[id]"} {
+        #format {target_line} {\e[7m剩余:%-6s 目标:%s\e[0m}
+            {$my[status_raw][qi]} {$my[status_raw][name]};
+        #showme {$target_line} {-3} {0};
+        #return;
+    };
+
     #IF {"$my[status_raw][qi]" != ""}          {#VAR {my[qi]}          {$my[status_raw][qi]}};
     #IF {"$my[status_raw][max_qi]" != ""}      {#VAR {my[max_qi]}      {$my[status_raw][max_qi]}};
     #IF {"$my[status_raw][jing]" != ""}        {#VAR {my[jing]}        {$my[status_raw][jing]}};

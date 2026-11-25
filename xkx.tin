@@ -1,5 +1,5 @@
 #event {CATCH SCREEN SPLIT FILL} {#nop}
-#split 0 1
+#split 0 2
 #read beautify.tin
 beautify.On
 
